@@ -1,0 +1,48 @@
+USE [BDD]
+GO
+
+/****** Object:  Table [dbo].[board]    Script Date: 2023-12-20 오전 9:43:55 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[board](
+	[idx] [int] IDENTITY(1,1) NOT NULL,
+	[title] [varchar](50) NOT NULL,
+	[contents] [varchar](5000) NOT NULL,
+	[author] [varchar](50) NOT NULL,
+	[created_at] [date] NOT NULL,
+	[count] [int] NOT NULL
+	[pin] [int] NOT NULL,
+ CONSTRAINT [PK_board] PRIMARY KEY CLUSTERED
+(
+	[idx] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+USE [BDD]
+GO
+
+/****** Object:  Table [dbo].[member]    Script Date: 2024-02-06 오후 2:01:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[member](
+	[member_id] [varchar](255) NOT NULL,
+	[password] [varchar](255) NOT NULL,
+	[name] [varchar](10) NULL,
+PRIMARY KEY CLUSTERED
+(
+	[member_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
